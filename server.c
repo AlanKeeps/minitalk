@@ -6,13 +6,40 @@
 /*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 22:17:47 by dadina            #+#    #+#             */
-/*   Updated: 2021/11/23 22:21:29 by dadina           ###   ########.fr       */
+/*   Updated: 2021/11/28 20:52:42 by dadina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-// void	signal_parse(int index, siginfo_t *info, void *u)
+int	exit_error_msg(char *str)
+{
+	ft_putstr_fd(R"Error!\n"RS, 1);
+	ft_putstr_fd(str, 1);
+	exit(1);
+}
+
+void	signal_parse(int index, siginfo_t *info, void *u)
+{
+	static int c;
+	static int i;
+
+	(void)u;
+	if (index == SIGUSR1)
+		c += 1 << (7 - i);
+	i++;
+	if (i == 8)
+	{
+		if (c == 0)
+		{
+			if (kill(info->si_pid, SIGUSR2))
+				exit_error_msg(R"\nFailing signing! Durak!"RS);
+		}
+		ft_putchar_fd(c, 1);
+		i = 0;
+		c = 0;
+	}
+}
 
 int	main(int argc, char **argv)
 {

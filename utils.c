@@ -1,11 +1,15 @@
 #include "minitalk.h"
 
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 		write(fd, s++, 1);
 }
-
 
 size_t	ft_strlen(const char *s)
 {
@@ -43,13 +47,12 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-
-static int	ft_is_space(char ch)
-{
-	if ((ch >= 9 && ch <= 13) || ch == ' ')
-		return (1);
-	return (0);
-}
+// static int	ft_is_space(char ch)
+// {
+// 	if ((ch >= 9 && ch <= 13) || ch == ' ')
+// 		return (1);
+// 	return (0);
+// }
 
 int	ft_atoi(const char *str)
 {
