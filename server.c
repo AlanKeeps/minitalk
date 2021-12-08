@@ -6,7 +6,7 @@
 /*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 22:17:47 by dadina            #+#    #+#             */
-/*   Updated: 2021/11/28 20:52:42 by dadina           ###   ########.fr       */
+/*   Updated: 2021/12/01 20:29:59 by dadina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	exit_error_msg(char *str)
 
 void	signal_parse(int index, siginfo_t *info, void *u)
 {
-	static int c;
-	static int i;
+	static int	c;
+	static int	i;
 
 	(void)u;
 	if (index == SIGUSR1)

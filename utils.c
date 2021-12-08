@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 20:29:35 by dadina            #+#    #+#             */
+/*   Updated: 2021/12/08 20:51:49 by dadina           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 void	ft_putchar_fd(char c, int fd)
@@ -40,33 +52,3 @@ void	ft_putnbr_fd(long long n, int fd)
 	}
 }
 
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-// static int	ft_is_space(char ch)
-// {
-// 	if ((ch >= 9 && ch <= 13) || ch == ' ')
-// 		return (1);
-// 	return (0);
-// }
-
-int	ft_atoi(const char *str)
-{
-	int	x;
-	int	minus;
-
-	x = 0;
-	minus = -1;
-	while (ft_is_space(*str))
-		str++;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			minus = 1;
-	while (*str && ft_isdigit(*str))
-		x = x * 10 - (*str++ - '0');
-	return (x * minus);
-}

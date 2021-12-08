@@ -6,7 +6,7 @@
 /*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 22:17:58 by dadina            #+#    #+#             */
-/*   Updated: 2021/11/28 20:52:12 by dadina           ###   ########.fr       */
+/*   Updated: 2021/12/01 20:31:53 by dadina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,5 @@ int	main(int argc, char **argv)
 		exit_error_msg(Y"Many arguments!\nOnly argc == 3!\n"RS);
 	while (1)
 		pause();
-	return (0);	
+	return (0);
 }
