@@ -6,7 +6,7 @@
 /*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 22:17:58 by dadina            #+#    #+#             */
-/*   Updated: 2021/12/01 20:31:53 by dadina           ###   ########.fr       */
+/*   Updated: 2021/12/13 20:43:47 by dadina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	convers_dec(char c, int pid)
 				exit_error_msg(R"SIGUSR2 == -1\n"RS);
 		}
 		i++;
-		usleep(125);
+		usleep(300);
 	}
 }
 

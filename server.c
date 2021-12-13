@@ -6,7 +6,7 @@
 /*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 22:17:47 by dadina            #+#    #+#             */
-/*   Updated: 2021/12/01 20:29:59 by dadina           ###   ########.fr       */
+/*   Updated: 2021/12/13 21:02:49 by dadina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	signal_parse(int index, siginfo_t *info, void *u)
 		}
 		ft_putchar_fd(c, 1);
 		i = 0;
-		c = 0;
+		c = '\0';
 	}
 }
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc == 1)
 	{
-		while (++i < 17)
+		while (++i < 10)
 		{
 			ft_putstr_fd(G". "RS, 1);
 			usleep(45000);
