@@ -6,7 +6,7 @@
 /*   By: dadina <dadina@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 22:17:47 by dadina            #+#    #+#             */
-/*   Updated: 2021/12/13 21:02:49 by dadina           ###   ########.fr       */
+/*   Updated: 2021/12/16 20:14:26 by dadina           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ void	signal_parse(int index, siginfo_t *info, void *u)
 
 int	main(int argc, char **argv)
 {
-	struct sigaction	talk;
+	struct sigaction	t;
 	int					i;
 
 	i = 0;
 	(void)argv;
 	if (argc == 1)
 	{
-		while (++i < 10)
+		while (++i < 30)
 		{
 			ft_putstr_fd(G". "RS, 1);
 			usleep(45000);
@@ -59,9 +59,9 @@ int	main(int argc, char **argv)
 		ft_putstr_fd(Y"Server PID:\t"RS, 1);
 		ft_putnbr_fd(getpid(), 1);
 		ft_putchar_fd('\n', 1);
-		talk.sa_sigaction = signal_parse;
-		if (sigaction(SIGUSR1, &talk, 0) == -1 || \
-			sigaction(SIGUSR2, &talk, 0) == -1)
+		t.sa_sigaction = signal_parse;
+		if (sigaction(SIGUSR1, &t, 0) == -1 || \
+			sigaction(SIGUSR2, &t, 0) == -1)
 			exit_error_msg(R"\nFailed signing!"RS);
 		while (1)
 			pause();
